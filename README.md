@@ -1,0 +1,106 @@
+# Windows 11 IoT Enterprise LTSC Install Guide
+My personal guide to installing Windows 11 IoT Enterprise LTSC and packages that I might need.
+# Prepparations
+- Rename the `C:/` drive to a recognizable name to easly overwrite the Windows installation.
+- Check the size of you drive to verify that aren't installing it on the wrong drive
+- If you plan dual boot Linux and Windows, install Windows first than Linux since it over write you Linux boot entry
+- Get wifi driver if computer can't use ethernet.
+
+## Windows 11 ISO installation
+1. Select `Windows 11 IoT Enterprise LTSC` option on which derivative  install.
+2. Click on the `I Don't have a Activation Code` link at the bottom left of the screen.
+3. Select the drive with the recognizable name from before.
+4. When the computer reboots unplug the USB
+5. The computer will reboot and check for update once it done checking for updates up plug the Ethernet if you want to use a local account instead of a Microsoft account.
+6. Connect to Wifi or install wifi driver from before so you can sign into your Microsoft account.
+7. Sign in or make a account
+8. Connect Ethernet.
+8. The computer will reboot into Windows
+
+## Windows
+1. Connect to Wifi
+2. Activate Windows
+    ```bash
+    irm https://get.activated.win | iex
+    ```
+
+3. Install Microsoft Store
+Microsoft Store will be installed in the background. Look the notification menu for progress
+    ```bash
+    wsreset -i
+    ```
+
+4. Install drivers
+
+    - [AMD Adrenalin](https://www.amd.com/en/support/download/drivers.html)
+    - Intel Driver & Support Assistant
+    ```bash
+    winget install -e --id Intel.IntelDriverAndSupportAssistant
+    ```
+    - [Nvidia App](https://www.nvidia.com/en-us/software/nvidia-app/)
+    - Ethernet or WiFi
+    - Sound
+
+5. install [Xbox App](https://aka.ms/xboxinstaller)
+    - install xbox deps in the nofication menu in the xbox app
+
+6. install winget and packages
+    Microsoft [Winget store](https://apps.microsoft.com/detail/9nblggh4nns1) page
+    ```bash
+    Install-Module -Name Microsoft.WinGet.Client
+    ```
+    `9MSMLRH6LZF3` is Microsoft's new notepad. NanaZip is 7zip but update gui and context menu support for win 11
+    ```bash
+    winget install LibreWolf.LibreWolf M2Team.NanaZip 9MSMLRH6LZF3 Google.Chrome 7zip.7zip MartiCliment.UniGetUI Valve.Steam Discord.Discord Gyan.FFmpeg
+    ```
+
+    Installing image\video extensions `jxl, AVC, Raw, webp, ~~HEIF~~, webm, MPEG-2, av1, vp9, AC-3/E-AC3` missing HEVC (HEIF) and AC-4. [Link](https://www.codecguide.com/media_foundation_codecs.htm)
+    ```bash
+    winget install 9MZPRTH5C0TB 9PB0TRCNRHFX 9NCTDW2W1BH8 9PG2DK419DRG 9PMMSR1CGPWG 9N5TDP8VCMHS 9N95Q1ZZPMH4 9MVZQVXJBQ9V 9N4D0MSMP0PT 9NVJQJBDKN97
+    ```
+
+7. install scoop and packages
+    ```bash
+    install scoop
+    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+    Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+    ```
+
+    ```bash
+    scoop install git
+    scoop bucket add extras
+    scoop install main/scoop-search extras/mpv
+    ```
+
+    To replace built-in scoop search, add this to `$PROFILE:` `. ([ScriptBlock]::Create((& scoop-search --hook | Out-String)))`
+    not sure if this command works.
+    ```bash
+    Add-Content -Path $PROFILE -Value '. ([ScriptBlock]::Create((& scoop-search --hook | Out-String)))'
+    ```
+
+8. install [Microsoft Office 365](https://gravesoft.dev/office_c2r_links)
+    - Activate Microsoft Office 365
+
+    ```bash
+      irm https://get.activated.win | iex
+    ```
+
+Configuration
+---
+##### Disable windows groups in alt + tab
+disable
+```
+Show my snapped windows when I hover over taskbar apps, in Task View, and when I press Alt + Tab.
+```
+ in Multitasking system settings
+
+##### Disable Fast Startup and disable hibernation
+Only do this if you plan to dual boot and you will use some of the windows drives on linux
+
+With administrator privileges
+```bash
+powercfg /H off
+```
+
+##### Edit starup apps
+Might want to wait until winget and scoop install everything first
