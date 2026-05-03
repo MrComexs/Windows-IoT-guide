@@ -92,6 +92,7 @@ Microsoft Store will be installed in the background. Look the notification menu 
 
 Configuration
 ---
+Here are some configuration you could make while you wait for the packages to install.
 ##### Disable windows groups in alt + tab
 disable
 ```
