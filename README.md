@@ -1,10 +1,14 @@
 # Windows 11 IoT Enterprise LTSC Install Guide
-My personal guide to installing Windows 11 IoT Enterprise LTSC and packages that I might need.
+My personal guide to installing Windows 11 IoT Enterprise LTSC and packages.
+
+Who is this for, well mostly only for myself since I doubt anyone will like my packages that I have listed down here.
 # Prepparations
-- Rename the `C:/` drive to a recognizable name to easly overwrite the Windows installation.
+- Create a Windows installation media. Ventoy is preferred. 
+- Rename the `C:/` drive to a recognizable name so you can easly overwrite during the Windows installation.
 - Check the size of you drive to verify that aren't installing it on the wrong drive
-- If you plan dual boot Linux and Windows, install Windows first than Linux since it over write you Linux boot entry
-- Get wifi driver if computer can't use ethernet.
+- If you plan dual boot Linux and Windows, install Windows first then Linux because some motherboards delete EFI boot entries after a windows install
+- Download Wi-Fi Driver if using Ethernet isn't a option
+    - make sure to place the Wi-Fi driver on a USB 
 
 ## Windows 11 ISO installation
 1. Select `Windows 11 IoT Enterprise LTSC` option on which derivative  install.
@@ -25,7 +29,7 @@ My personal guide to installing Windows 11 IoT Enterprise LTSC and packages that
     ```
 
 3. Install Microsoft Store
-Microsoft Store will be installed in the background. Look the notification menu for progress
+Microsoft Store will be installed in the background. Look the notification menu for progress. It sometimes takes a long time to install.
     ```bash
     wsreset -i
     ```
@@ -40,6 +44,7 @@ Microsoft Store will be installed in the background. Look the notification menu 
     - [Nvidia App](https://www.nvidia.com/en-us/software/nvidia-app/)
     - Ethernet or WiFi
     - Sound
+    - Chipset
 
 5. install [Xbox App](https://aka.ms/xboxinstaller)
     - install xbox deps in the nofication menu in the xbox app
