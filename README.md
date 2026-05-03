@@ -98,7 +98,7 @@ Show my snapped windows when I hover over taskbar apps, in Task View, and when I
  in Multitasking system settings
 
 ##### Disable Fast Startup and disable hibernation
-Only needed if you plan to share Drives both on Windows and linux when dual booting
+Only needed if you plan to share drives both on Windows and linux when dual booting
 
 With administrator privileges
 ```bash
