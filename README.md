@@ -1,5 +1,17 @@
 <!--
-Talk about Windhawk and add both unubdles and ps1 files download
+Talk about Windhawk
+add both unubdles and ps1 files download
+[USB Latency Analyzer](https://tools.mariusheier.com/cpudirect.html)
+Windwak
+    - mouse acceleration disable
+    - Classic context menu on Windows 11
+    - Alt+Tab per monitor
+    - Turn off change file extension warning
+    - F1 Blocker
+```cmd
+irm "https://christitus.com/win" | iex
+```
+- change DNS
 -->
 
 # Windows 11 IoT Enterprise LTSC Install Guide
@@ -21,6 +33,7 @@ Who is this for, well mostly only for myself since I doubt anyone will like my p
 4. When the computer reboots unplug the USB
 5. The computer will reboot and check for update once it done checking for updates up plug the Ethernet if you want to use a local account instead of a Microsoft account.
 6. Connect to Wifi or install wifi driver from before so you can sign into your Microsoft account.
+    - to install the driver press `SHIFT` + `F10` then type `explorer` in the cmd window. Then go install the exe.
 7. Sign in or make a account
 8. Connect Ethernet.
 8. The computer will reboot into Windows
@@ -85,7 +98,7 @@ Show my snapped windows when I hover over taskbar apps, in Task View, and when I
  in Multitasking system settings
 
 ##### Disable Fast Startup and disable hibernation
-Only do this if you plan to dual boot and you will use some of the windows drives on linux
+Only needed if you plan to share Drives both on Windows and linux when dual booting
 
 With administrator privileges
 ```bash
