@@ -1,3 +1,7 @@
+<!--
+Talk about Windhawk and add both unubdles and ps1 files download
+-->
+
 # Windows 11 IoT Enterprise LTSC Install Guide
 My personal guide to installing Windows 11 IoT Enterprise LTSC and packages.
 
@@ -64,26 +68,7 @@ Microsoft Store will be installed in the background. Look the notification menu 
     winget install 9MZPRTH5C0TB 9PB0TRCNRHFX 9NCTDW2W1BH8 9PG2DK419DRG 9PMMSR1CGPWG 9N5TDP8VCMHS 9N95Q1ZZPMH4 9MVZQVXJBQ9V 9N4D0MSMP0PT 9NVJQJBDKN97
     ```
 
-7. install scoop and packages
-    ```bash
-    install scoop
-    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-    Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
-    ```
-
-    ```bash
-    scoop install git
-    scoop bucket add extras
-    scoop install main/scoop-search extras/mpv
-    ```
-
-    To replace built-in scoop search, add this to `$PROFILE:` `. ([ScriptBlock]::Create((& scoop-search --hook | Out-String)))`
-    not sure if this command works.
-    ```bash
-    Add-Content -Path $PROFILE -Value '. ([ScriptBlock]::Create((& scoop-search --hook | Out-String)))'
-    ```
-
-8. install [Microsoft Office 365](https://gravesoft.dev/office_c2r_links)
+7. install [Microsoft Office 365](https://gravesoft.dev/office_c2r_links)
     - Activate Microsoft Office 365
 
     ```bash
