@@ -75,7 +75,7 @@ Microsoft Store will be installed in the background. Look the notification menu 
     ```
     `9MSMLRH6LZF3` is Microsoft's new notepad. NanaZip is 7zip but update gui and context menu support for win 11
     ```bash
-    winget install LibreWolf.LibreWolf M2Team.NanaZip 9MSMLRH6LZF3 Google.Chrome 7zip.7zip MartiCliment.UniGetUI Valve.Steam Discord.Discord Gyan.FFmpeg
+    winget install  M2Team.NanaZip 9MSMLRH6LZF3 Google.Chrome 7zip.7zip MartiCliment.UniGetUI Valve.Steam Discord.Discord Gyan.FFmpeg
     ```
 
     Installing image\video extensions `jxl, AVC, Raw, webp, ~~HEIF~~, webm, MPEG-2, av1, vp9, AC-3/E-AC3` missing HEVC (HEIF) and AC-4. [Link](https://www.codecguide.com/media_foundation_codecs.htm)
