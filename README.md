@@ -41,7 +41,7 @@ Who is this for, well mostly only for myself since I doubt anyone will like my p
 8. The computer will reboot into Windows
 
 ## Windows
-1. Connect to Wifi
+1. Connect to Wifi if Ethernet isn't a option
 2. Activate Windows
     ```bash
     irm https://get.activated.win | iex
