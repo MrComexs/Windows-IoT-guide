@@ -1,9 +1,8 @@
 <!--
-covert README.MD into a HTML file with pandoc
-
 Talk about Windhawk
 add both unubdles and ps1 files download
 [USB Latency Analyzer](https://tools.mariusheier.com/cpudirect.html)
+change DNS
 Windwak
     - mouse acceleration disable
     - Classic context menu on Windows 11
@@ -13,7 +12,6 @@ Windwak
 ```cmd
 irm "https://christitus.com/win" | iex
 ```
-- change DNS
 -->
 
 # Windows 11 IoT Enterprise LTSC Install Guide
